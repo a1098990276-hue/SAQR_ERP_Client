@@ -1,0 +1,19 @@
+{
+  "appTitle": "SAQR Accounting System",
+  "dashboard": "Dashboard",
+  "accounts": "Chart of Accounts",
+  "products": "Products",
+  "invoices": "Invoices",
+  "journal": "Journal Entries",
+  "reports": "Reports",
+  "settings": "Settings",
+  "language": "Language",
+  "login": "Login",
+  "logout": "Logout",
+  "username": "Username",
+  "password": "Password",
+  "welcome": "Welcome",
+  "permissionsCount": "Permissions count",
+  "quickStart": "Quick Start",
+  "quickStartDesc": "You can now manage accounts, inventory, invoices, journal entries, and reports through the system APIs."
+}
