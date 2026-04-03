@@ -1,0 +1,65 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Build results
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Database files
+*.db
+*.db-journal
+*.sqlite
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
