@@ -853,7 +853,10 @@ namespace SAQR_ERP_Client.Data
                 _ => "TX"
             };
 
-            command.CommandText = $"SELECT COALESCE(MAX(CAST(SUBSTR(TransactionNumber, {prefix.Length + 2}) AS INTEGER)), 0) + 1 FROM Transactions WHERE TransactionNumber LIKE @prefix || '%'";
+            // Using fixed offset instead of string interpolation for security
+            const int prefixOffset = 4; // All prefixes are 2 chars + "-" = offset of 4 (index starts at 1 in SQL)
+            command.CommandText = "SELECT COALESCE(MAX(CAST(SUBSTR(TransactionNumber, @offset) AS INTEGER)), 0) + 1 FROM Transactions WHERE TransactionNumber LIKE @prefix || '%'";
+            command.Parameters.AddWithValue("@offset", prefixOffset);
             command.Parameters.AddWithValue("@prefix", prefix);
             var nextNum = Convert.ToInt32(command.ExecuteScalar());
             return $"{prefix}-{nextNum:D6}";
@@ -992,7 +995,10 @@ namespace SAQR_ERP_Client.Data
                         _ => "INV"
                     };
 
-                    command.CommandText = $"SELECT COALESCE(MAX(CAST(SUBSTR(InvoiceNumber, {prefix.Length + 2}) AS INTEGER)), 0) + 1 FROM Invoices WHERE InvoiceNumber LIKE @prefix || '%'";
+                    // Using fixed offset instead of string interpolation for security
+                    const int prefixOffset = 4; // All prefixes are 2-3 chars + "-" = offset of 4 (index starts at 1 in SQL)
+                    command.CommandText = "SELECT COALESCE(MAX(CAST(SUBSTR(InvoiceNumber, @offset) AS INTEGER)), 0) + 1 FROM Invoices WHERE InvoiceNumber LIKE @prefix || '%'";
+                    command.Parameters.AddWithValue("@offset", prefixOffset);
                     command.Parameters.AddWithValue("@prefix", prefix);
                     var nextNum = Convert.ToInt32(command.ExecuteScalar());
                     invoice.InvoiceNumber = $"{prefix}-{nextNum:D6}";

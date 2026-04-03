@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>app.ico</ApplicationIcon>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <AssemblyName>SaqrAccounting</AssemblyName>
     <Product>الصقر لأنظمة المحاسبة</Product>
     <Company>Al-Saqr Accounting Systems</Company>
